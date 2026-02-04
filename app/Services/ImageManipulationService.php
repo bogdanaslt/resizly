@@ -5,9 +5,8 @@ namespace App\Services;
 use App\Enum\Fit;
 use App\Enum\Flip;
 use App\Enum\Format;
-use App\Models\Parameters;
+use App\Models\ImageResizeParameters;
 use Intervention\Image\Interfaces\EncodedImageInterface;
-use Intervention\Image\Interfaces\ImageInterface;
 use Intervention\Image\Interfaces\ImageManagerInterface;
 
 class ImageManipulationService
@@ -17,8 +16,9 @@ class ImageManipulationService
     ) {
     }
 
-    public function handle(Parameters $parameters, $imageData): EncodedImageInterface
+    public function handle(ImageResizeParameters $parameters, $imageData): EncodedImageInterface
     {
+        $parameters = $parameters->normalizeParameters();
         $image = $this->manager->read($imageData);
 
         $parameters->width *= $parameters->dpr;
