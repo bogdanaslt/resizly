@@ -4,6 +4,9 @@ This application provides a lightweight solution for on-the-fly image manipulati
 
 It allows you to serve optimized, resized, and processed images simply by setting parameters to your image URLs, reducing the need for manual pre-processing and saving storage space.
 
+> [!WARNING]
+> Not ready to use in production (doh)
+
 ### it supports following image formats as input:
 - png
 - jpg
@@ -58,7 +61,7 @@ Usage:
 ```
 http://localhost/[PARAMETERS]/[URL_TO_IMAGE]
 ```
-For exxample:
+For example:
 ```
-http://localhost/width=200,height=200,/[URL_TO_IMAGE]
+http://localhost/width=200,height=200,fit=cover/https://i.imgur.com/0GZkiA6.png
 ```
