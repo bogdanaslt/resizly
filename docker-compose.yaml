@@ -1,0 +1,9 @@
+services:
+  resizly:
+    build: .
+    environment:
+      - SERVER_NAME=:80
+    ports:
+      - "${RESIZLY_PORT:-80}:80"
+    volumes:
+      - .:/app
