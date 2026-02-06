@@ -21,6 +21,7 @@ It allows you to serve optimized, resized, and processed images simply by settin
 ### Supported image resize backends
 - GD
 - Imagick
+- Vips
 
 ### Parameters
 | Parameter               | Supported   |

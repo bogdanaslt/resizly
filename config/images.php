@@ -5,4 +5,5 @@ return [
         'trim',
         explode(',', env('IMAGES_ALLOWED_MIME', ''))
     )) ?: ['image/jpeg', 'image/png', 'image/webp'],
+    'driver' => env('RESIZLY_DRIVER', 'gd'),
 ];
