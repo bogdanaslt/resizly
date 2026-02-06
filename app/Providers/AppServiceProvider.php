@@ -20,6 +20,11 @@ class AppServiceProvider extends ServiceProvider
             fn(Application $app) => new ImageManager(Driver::class),
             true,
         );
+
+        if ($this->app->environment('local') && class_exists(\Laravel\Telescope\TelescopeServiceProvider::class)) {
+            $this->app->register(\Laravel\Telescope\TelescopeServiceProvider::class);
+            $this->app->register(TelescopeServiceProvider::class);
+        }
     }
 
     /**
